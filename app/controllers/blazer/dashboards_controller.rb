@@ -2,6 +2,8 @@ module Blazer
   class DashboardsController < BaseController
     before_action :set_dashboard, only: [:show, :edit, :update, :destroy, :refresh]
 
+    content_security_policy false
+    
     def new
       @dashboard = Blazer::Dashboard.new
     end

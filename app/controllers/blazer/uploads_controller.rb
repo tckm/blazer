@@ -3,6 +3,8 @@ module Blazer
     before_action :ensure_uploads
     before_action :set_upload, only: [:show, :edit, :update, :destroy]
 
+    content_security_policy false
+    
     def index
       @uploads = Blazer::Upload.order(:table)
     end

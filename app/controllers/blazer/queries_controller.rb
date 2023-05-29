@@ -3,6 +3,8 @@ module Blazer
     before_action :set_query, only: [:show, :edit, :update, :destroy, :refresh]
     before_action :set_data_source, only: [:tables, :docs, :schema, :cancel]
 
+    content_security_policy false
+    
     def home
       set_queries(1000)
 
